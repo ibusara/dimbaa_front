@@ -5,10 +5,9 @@ import { InnerTable } from 'src/app/core/interfaces/inner-table';
   selector: 'app-inner-table',
   templateUrl: './inner-table.component.html',
   styleUrls: ['./inner-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InnerTableComponent implements OnInit {
-
   @Output()
   editClick: EventEmitter<any> = new EventEmitter<any>();
   @Output()
@@ -20,30 +19,31 @@ export class InnerTableComponent implements OnInit {
   @Output()
   deleteClick: EventEmitter<any> = new EventEmitter<any>();
   @Input()
-  table!: InnerTable
+  table!: InnerTable;
 
-  constructor() { }
+  @Input() test!: string;
 
-  ngOnInit(): void {
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 
   onCustomColumnClick(e: any, action: any) {
     action.onClick(e);
   }
 
-  onEditClick(e:any) {
+  onEditClick(e: any) {
     this.editClick.emit(e);
   }
 
-  onViewClick(e:any) {
+  onViewClick(e: any) {
     this.viewClick.emit(e);
   }
 
-  onUploadClick(e:any) {
+  onUploadClick(e: any) {
     this.uploadClick.emit(e);
   }
 
-  onDeleteClick(e:any) {
+  onDeleteClick(e: any) {
     this.deleteClick.emit(e);
   }
 

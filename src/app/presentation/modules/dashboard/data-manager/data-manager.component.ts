@@ -39,13 +39,6 @@ export class DataManagerComponent implements OnInit {
       });
   }
   ngOnInit(): void {
-    this.getRoles();
   }
 
-  getRoles() {
-    this._stateManagementService.getRecords()
-      .subscribe((response: any) => {
-        debugger
-      });
-  }
 }
