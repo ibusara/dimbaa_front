@@ -13,5 +13,7 @@ export class User {
   name: string = ""
   email: string = ""
   password: string = ""
+  mobile: string = ""
+  id: number = 0
   role: Roles = Roles.SUPER_ADMIN
 }

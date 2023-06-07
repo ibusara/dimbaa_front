@@ -10,7 +10,7 @@
           <tr>
             <td class="text-right pt-4">User role:</td>
             <td class="pl-5">
-              <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+              <select [(ngModel)]="user.role" class="select w-full max-w-xs border select-sm bg-white" title="select role">
                 <option disabled selected>Select</option>
                 <option>Homer</option>
                 <option>Marge</option>
@@ -23,19 +23,19 @@
           <tr>
             <td class="text-right pt-4">Name:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="user.name" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
           <tr>
             <td class="text-right pt-4">Mobile:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="user.mobile" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
           <tr>
             <td class="text-right pt-4">Email:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="user.email" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
         </table>

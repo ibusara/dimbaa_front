@@ -60,11 +60,14 @@ console.log(1);
     fullname : value.name,
     role : value.role,
     mobile : value.mobile,
+    id : value.id,
     }
     return res;
   }
 
   handleEdit(e: any) {
+    console.log(e);
+    this.editData=e;
     this.toggleEditModal.next(true)
   }
 

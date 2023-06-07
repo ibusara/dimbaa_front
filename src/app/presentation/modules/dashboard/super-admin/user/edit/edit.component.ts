@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
+import { User } from 'src/app/core/models/user.model';
+import { UsersService } from 'src/app/persistence/functionalities/users/users.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -11,22 +13,36 @@ export class UserEditComponent implements OnInit {
   @Input() data!: any
 
   message: any = null
+  user : User =new User;
 
   constructor(
     private zone: NgZone,
-    private ref: ChangeDetectorRef
+    private ref: ChangeDetectorRef,
+    private userService :UsersService ,
   ) { }
 
   ngOnInit(): void {
   }
 
   update() {
-    this.message = {
+   /* this.message = {
       type: "success",
       title: "Success",
       message: "Update success"
     }
     this.resetMessage()
+    */
+    console.log('modal');
+    let model: any = {};
+    (model['name'] = this.user.name),
+    (model['role'] = this.user.role),
+      (model['mobile'] = this.user.mobile),
+      (model['id'] = this.user.id),
+      (model['email'] = this.user.email) ;
+      console.log(model);
+    this.userService.updateUser(model).subscribe((res: any) => {
+      alert(res.message);
+    });
   }
 
   delete() {
@@ -67,4 +83,32 @@ export class UserEditComponent implements OnInit {
       this.message = null
     }
   }
+  ngOnChanges(){
+    console.log(1);
+    console.log(this.data);
+  }
+  ngDoCheck(){
+    console.log(2);
+    console.log(this.data);
+    this.user.role=this.data?.role;
+    this.user.name=this.data?.fullname;
+    this.user.mobile=this.data?.mobile;
+    this.user.id=this.data?.id;
+   
+    this.ref.markForCheck();
+    this.ref.detectChanges();
+  }
+  /*
+  ngAfterContentInit (){
+    console.log(3);
+    console.log(this.data);
+  }
+  ngAfterContentChecked() {
+    console.log(4);
+    console.log(this.data);
+  }
+  ngAfterViewInit(){
+    console.log(5);
+    console.log(this.data);
+  }*/
 }
