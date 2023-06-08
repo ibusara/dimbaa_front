@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef , ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InnerTable } from 'src/app/core/interfaces/inner-table';
 
 @Component({
@@ -23,7 +23,7 @@ export class InnerTableComponent implements OnInit {
 
   @Input() test!: string;
 
-  constructor() {}
+  constructor  (    private cdr: ChangeDetectorRef ) {}
 
   ngOnInit(): void {}
 
@@ -49,5 +49,9 @@ export class InnerTableComponent implements OnInit {
 
   _mobileRowClicked(data: any) {
     this.mobileRowClicked.emit(data);
+  }
+   ngDoCheck(){
+    this.cdr.markForCheck();
+    this.cdr.detectChanges();
   }
 }

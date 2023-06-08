@@ -15,9 +15,12 @@ export class BackendApiService {
   ) { }
 
   post<T>(url: string, data: any) {
-    return this.http.post<T>(this.apiUrl + url, data)
+    return this.http.post<T>(this.apiUrl + url, data, { headers: this.headers });
   }
 
+  put<T>(url: string, data: any) {
+    return this.http.put<T>(this.apiUrl + url, data, { headers: this.headers });
+  }
   get<T>(url: string) {
     return this.http.get<T>(this.apiUrl + url , { headers: this.headers })
   }
