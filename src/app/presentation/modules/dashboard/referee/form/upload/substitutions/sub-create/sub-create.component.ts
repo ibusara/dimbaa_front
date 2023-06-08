@@ -1,43 +1,42 @@
-import { ChangeDetectorRef, Component, NgZone } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, NgZone } from '@angular/core';
 import { Subject } from 'rxjs';
+import { UploadHelper } from '../../upload-helper';
 
 @Component({
   selector: 'app-sub-create',
   templateUrl: './sub-create.component.html',
-  styleUrls: ['./sub-create.component.scss']
+  styleUrls: ['./sub-create.component.scss'],
 })
 export class SubCreateComponent {
-  message: any = null
+  message: any = null;
 
-  constructor(
-    private zone: NgZone,
-    private ref: ChangeDetectorRef
-  ) { }
+  constructor(private zone: NgZone, private ref: ChangeDetectorRef) {}
 
   toggleModal: Subject<boolean> = new Subject();
 
-  ngOnInit(): void {
-  }
+  @Input() uploadHelper: UploadHelper = new UploadHelper();
+
+  ngOnInit(): void {}
 
   add() {
     this.message = {
-      type: "success",
-      title: "Success",
-      message: "User added successfully"
-    }
-    this.resetMessage()
+      type: 'success',
+      title: 'Success',
+      message: 'User added successfully',
+    };
+    this.resetMessage();
   }
 
   closeModal() {
-    this.toggleModal.next(true)
+    this.toggleModal.next(true);
   }
 
   resetMessage() {
     this.zone.run(() => {
       setTimeout(() => {
-        this.message = null
-        this.ref.markForCheck()
+        this.message = null;
+        this.ref.markForCheck();
       }, 1000);
-    })
+    });
   }
 }
