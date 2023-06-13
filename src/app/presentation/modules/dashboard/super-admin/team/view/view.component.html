@@ -10,17 +10,30 @@
         <td class="pl-5">{{  data?.id}}   </td>
       </tr>
       <tr>
-        <td class="text-right pt-4">Picture:</td>
+        <td class="text-right pt-4">Region:</td>
+        <td class="pl-5">{{  data?.region}}   </td>
+      </tr>
+      <tr>
+        <td class="text-right pt-4">Logo:</td>
         <td class="pl-5">
 		<span	class="image-container" >
-		<img [src]="data?.staffPic"  />
+		<img [src]="data?.team_logo"  />
 		</span>
         </td>
       </tr>
       <tr>
-        <td class="text-right pt-4">First Name:</td>
-        <td class="pl-5">{{  data?.firstName}}   </td>
+        <td class="text-right pt-4">Photo:</td>
+        <td class="pl-5">
+		<span	class="image-container" >
+		<img [src]="data?.team_photo"  />
+		</span>
+        </td>
       </tr>
+      <tr>
+        <td class="text-right pt-4"> Name:</td>
+        <td class="pl-5">{{  data?.name}}   </td>
+      </tr>
+      <!--
       <tr>
         <td class="text-right pt-4">Middle Name:</td>
         <td class="pl-5">{{  data?.middleName}}   </td>
@@ -29,11 +42,12 @@
         <td class="text-right pt-4">Last Name:</td>
         <td class="pl-5">{{  data?.lastName}}   </td>
       </tr>
+       -->
       <tr>
         <td class="text-right pt-4">Job Description:</td>
         <td class="pl-5">{{  data?.jobdescription}}   </td>
       </tr>
-      
+     
   
     </table>
   </div>

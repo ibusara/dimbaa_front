@@ -7,8 +7,8 @@ import { TeamApparel } from '../../models/team-apparel.model';
 })
 export class TeamApparelService extends BackendApiService {
 
-  list<ApiResponse>() {
-    return this.get<ApiResponse>('teammanager/apparel');
+  list<ApiResponse>( matchId : string) {
+    return this.get<ApiResponse>('teammanager/apparel' + '?matchId=' + matchId );
   }
 
   store<ApiResponse>(team_apparel: TeamApparel) {

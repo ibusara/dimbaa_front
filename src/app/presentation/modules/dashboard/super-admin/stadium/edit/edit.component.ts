@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
-
+import { Stadium } from 'src/app/core/models/stadium.model';
+ 
 @Component({
   selector: 'app-stadium-edit',
   templateUrl: './edit.component.html',
@@ -9,7 +10,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, O
 export class StadiumEditComponent implements OnInit {
 
   @Input() data!: any
-
+  stadium : Stadium =new Stadium;
   message: any = null
 
   constructor(

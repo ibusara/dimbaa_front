@@ -64,6 +64,7 @@ export class StadiumComponent implements OnInit {
   }
 
   handleEdit(e: any) {
+    this.editData=e;
     this.toggleEditModal.next(true)
 
   }
