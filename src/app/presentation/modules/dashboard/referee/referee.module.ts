@@ -33,6 +33,7 @@ import { CreateTeamGoalComponent } from './form/upload/upload-goals/create-team-
 import { EditTeamGoalComponent } from './form/upload/upload-goals/edit-team-goal/edit-team-goal.component';
 import { SubEditComponent } from './form/upload/substitutions/sub-edit/sub-edit.component';
 import { SubCreateComponent } from './form/upload/substitutions/sub-create/sub-create.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { SubCreateComponent } from './form/upload/substitutions/sub-create/sub-c
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RefereeRoutingModule,
     ComponentsModule
   ]

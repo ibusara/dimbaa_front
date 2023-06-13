@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { InnerTable } from 'src/app/core/interfaces/inner-table';
+import { UploadHelper } from '../upload-helper';
 
 @Component({
   selector: 'app-substitutions',
@@ -15,6 +16,8 @@ export class SubstitutionsComponent implements OnInit {
 
   editData: any;
   message: any = null
+
+  @Input() uploadHelper: UploadHelper = new UploadHelper();
 
   table: InnerTable = {
     headers: [

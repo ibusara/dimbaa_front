@@ -10,38 +10,38 @@
             <tr>
               <td class="text-right pt-4">Team:</td>
               <td class="pl-5">
-                <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
-                  <option disabled selected>Select</option>
-                  <option>Dar es Salaam</option>
+                <select [(ngModel)]="uploadHelper.substitution.team" class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                  <option disabled selected value="">Select</option>
+                  <option value="DaresSalaam">Dar es Salaam</option>
                 </select>
               </td>
             </tr>
             <tr>
                 <td class="text-right pt-4">Activity:</td>
                 <td class="pl-5">
-                  <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
-                    <option disabled selected>Select</option>
-                    <option>In</option>
-                    <option>Out</option>
+                  <select [(ngModel)]="uploadHelper.substitution.in" class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                    <option disabled selected value="">Select</option>
+                    <option value="in">In</option>
+                    <option value="out">Out</option>
                   </select>
                 </td>
               </tr>
               <tr>
                 <td class="text-right pt-4">J/NO:</td>
                 <td class="pl-5">
-                  <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
-                    <option disabled selected>Select</option>
-                    <option>454</option>
-                    <option>542</option>
+                  <select [(ngModel)]="uploadHelper.substitution.player" class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                    <option disabled selected value="">Select</option>
+                    <option value="454">454</option>
+                    <option value="542">542</option>
                   </select>
                 </td>
               </tr>
               <tr>
                 <td class="text-right pt-4">MNT:</td>
                 <td class="pl-5">
-                  <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
-                    <option disabled selected>Select</option>
-                    <option *ngFor="let item of [].constructor(200); let i = index;">{{i+1}}</option>
+                  <select [(ngModel)]="uploadHelper.substitution.minute" class="select w-full max-w-xs border select-sm bg-white" title="select role">
+                    <option disabled selected value="">Select</option>
+                    <option *ngFor="let item of [].constructor(200); let i = index;" value="{{i}}">{{i+1}}</option>
                   </select>
                 </td>
               </tr>
@@ -59,4 +59,3 @@
       <app-alert *ngIf="message" [type]="message.type" [title]="message.title" [message]="message.message"></app-alert>
     </div>
   </app-modal>
-  
