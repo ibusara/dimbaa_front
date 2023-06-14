@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatchEvent } from 'src/app/core/models/matchEvent.model';
+import { StadiumManagementService } from 'src/app/core/services/stadium-management.service';
 import { StateManagementService } from 'src/app/core/services/state-management.service';
+import { TeamManagementService } from 'src/app/core/services/team-management.service';
 
 @Component({
   selector: 'app-data-manager-create-match',
@@ -10,8 +12,14 @@ import { StateManagementService } from 'src/app/core/services/state-management.s
 })
 export class MatchComponent implements OnInit {
   matchEvent: MatchEvent = new MatchEvent();
+  teamList: any = [];
+  stadiumList: any = [];
 
-  constructor(private dataManagerService: StateManagementService) {}
+  constructor(
+    private dataManagerService: StateManagementService,
+    private _teamManagementService: TeamManagementService,
+    private _stadiumManagementService: StadiumManagementService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -28,5 +36,23 @@ export class MatchComponent implements OnInit {
     this.dataManagerService.createMatchEvent(model).subscribe((res: any) => {
       alert(res.message);
     });
+  }
+
+  getTeamList() {
+    this._teamManagementService.getTeamList().subscribe((response: any) => {
+      if (response) {
+        this.teamList = response.teams;
+      }
+    });
+  }
+
+  getStadiumList() {
+    this._stadiumManagementService
+      .getStadiumList()
+      .subscribe((response: any) => {
+        if (response) {
+          this.stadiumList = response.stadia;
+        }
+      });
   }
 }

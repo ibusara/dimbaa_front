@@ -20,7 +20,9 @@ export class TournamentComponent implements OnInit {
     model['name'] = this.tournament.name;
     model['year'] = this.tournament.startDate.substring(0, 4);
 
-    this.dataManagerService.createTournament(model).subscribe((res: any) => {});
+    this.dataManagerService.createTournament(model).subscribe((res: any) => {
+      alert(res.message);
+    });
   }
 }
 

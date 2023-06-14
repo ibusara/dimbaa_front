@@ -132,6 +132,7 @@ export class DataManagerUpcomingComponent implements OnInit {
   }
 
   handleEdit(e: any) {
+    this.getMatchEvent(e?.id);
     this.toggleEditModal.next(true);
   }
 
@@ -148,6 +149,7 @@ export class DataManagerUpcomingComponent implements OnInit {
     this.dataManagerService.getMatchEvent(id).subscribe((res: any) => {
       if (res) {
         this.viewData = res.match;
+        this.editData = res.match;
       }
     });
   }
