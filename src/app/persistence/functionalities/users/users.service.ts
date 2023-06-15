@@ -15,4 +15,8 @@ getUsers(){
   return this.get( 'admin/users');
 }
 
+login(model:any){
+  return this.post( 'auth/login' ,model );
+}
+
 }
