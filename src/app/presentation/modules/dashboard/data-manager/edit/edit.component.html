@@ -11,11 +11,7 @@
         <p class="font-semibold text-right w-1/2">Home Team:</p>
         <select [(ngModel)]="matchEvent.home_team" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
           <option disabled selected value="">Select</option>
-          <option value="1">Homer</option>
-          <option value="2">Marge</option>
-          <option value="3">Bart</option>
-          <option value="4">Lisa</option>
-          <option value="5">Maggie</option>
+          <option [value]="team.id" *ngFor="let team of teamList">{{team.name}}</option>
         </select>
       </div>
       <!-- form element -->
@@ -23,11 +19,7 @@
         <p class="font-semibold text-right w-1/2">Select Tournament:</p>
         <select [(ngModel)]="matchEvent.tournament" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
           <option disabled selected value="">Select</option>
-          <option value="1">Homer</option>
-          <option value="2">Marge</option>
-          <option value="3">Bart</option>
-          <option value="4">Lisa</option>
-          <option value="5">Maggie</option>
+          <option [value]="tournament.id" *ngFor="let tournament of tournamentList">{{tournament.name}}</option>
         </select>
       </div>
       <!-- form element -->
@@ -73,11 +65,7 @@
         <p class="font-semibold text-right w-1/2">Away Team:</p>
         <select [(ngModel)]="matchEvent.away_team" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
           <option disabled selected value="">Select</option>
-          <option value="1">Homer</option>
-          <option value="2">Marge</option>
-          <option value="3">Bart</option>
-          <option value="4">Lisa</option>
-          <option value="5">Maggie</option>
+          <option [value]="team.id" *ngFor="let team of teamList">{{team.name}}</option>
         </select>
       </div>
       <!-- form element -->
@@ -99,11 +87,7 @@
         <p class="font-semibold text-right w-1/2">Stadium:</p>
         <select [(ngModel)]="matchEvent.stadium" class="select max-w-xs border select-sm bg-white w-1/2" title="select role">
           <option disabled selected value="">Select</option>
-          <option value="1">Homer</option>
-          <option value="2">Marge</option>
-          <option value="3">Bart</option>
-          <option value="4">Lisa</option>
-          <option value="5">Maggie</option>
+          <option [value]="stadium.id" *ngFor="let stadium of stadiumList">{{stadium.name}}</option>
         </select>
       </div>
       <!-- form element -->

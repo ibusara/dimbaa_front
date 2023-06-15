@@ -18,4 +18,11 @@ export class TeamManagementService {
     );
   }
 
+  getTournamentList(){
+    return this.http.get(
+      this.url + 'organizers/tournaments',
+      this.appUtils.GetAppApiHeaders()
+    );
+  }
+
 }

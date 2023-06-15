@@ -14,6 +14,11 @@
 <app-modal [toggleModal]="toggleEditModal">
   <span buttonContent></span>
   <div modalContent>
-    <app-data-manager-edit-match [data]="editData"></app-data-manager-edit-match>
+    <app-data-manager-edit-match
+      [data]="editData"
+      [teamList]="teamList"
+      [stadiumList]="stadiumList"
+      [tournamentList]="tournamentList"
+    ></app-data-manager-edit-match>
   </div>
 </app-modal>

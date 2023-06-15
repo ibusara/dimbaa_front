@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { InnerTable } from 'src/app/core/interfaces/inner-table';
+import { StadiumManagementService } from 'src/app/core/services/stadium-management.service';
 import { StateManagementService } from 'src/app/core/services/state-management.service';
+import { TeamManagementService } from 'src/app/core/services/team-management.service';
 
 @Component({
   templateUrl: './upcoming.component.html',
@@ -11,6 +13,10 @@ import { StateManagementService } from 'src/app/core/services/state-management.s
 export class DataManagerUpcomingComponent implements OnInit {
   toggleEditModal: Subject<boolean> = new Subject();
   toggleViewModal: Subject<boolean> = new Subject();
+
+  teamList: any = [];
+  stadiumList: any = [];
+  tournamentList: any = [];
 
   viewData: any = null;
   editData: any = null;
@@ -119,21 +125,24 @@ export class DataManagerUpcomingComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private dataManagerService: StateManagementService
+    private dataManagerService: StateManagementService,
+    private _teamManagementService: TeamManagementService,
+    private _stadiumManagementService: StadiumManagementService
   ) {}
 
   ngOnInit(): void {
     this.getMatchEventList();
+    this.getTournamentList();
+    this.getStadiumList();
+    this.getTeamList();
   }
 
   handleView(e: any) {
-    this.getMatchEvent(e?.id);
-    this.toggleViewModal.next(true);
+    this.getMatchEvent(e?.id, "view");
   }
 
   handleEdit(e: any) {
-    this.getMatchEvent(e?.id);
-    this.toggleEditModal.next(true);
+    this.getMatchEvent(e?.id, "edit");
   }
 
   getMatchEventList() {
@@ -145,12 +154,46 @@ export class DataManagerUpcomingComponent implements OnInit {
     });
   }
 
-  getMatchEvent(id: any) {
+  getMatchEvent(id: any, type: string) {
     this.dataManagerService.getMatchEvent(id).subscribe((res: any) => {
       if (res) {
         this.viewData = res.match;
         this.editData = res.match;
+        if(type == "edit"){
+          this.toggleEditModal.next(true);
+        }
+        else{
+          this.toggleViewModal.next(true);
+        }
       }
     });
+  }
+
+  getTeamList() {
+    this._teamManagementService.getTeamList().subscribe((response: any) => {
+      if (response) {
+        this.teamList = response.teams;
+      }
+    });
+  }
+
+  getStadiumList() {
+    this._stadiumManagementService
+      .getStadiumList()
+      .subscribe((response: any) => {
+        if (response) {
+          this.stadiumList = response.stadia;
+        }
+      });
+  }
+
+  getTournamentList() {
+    this._teamManagementService
+      .getTournamentList()
+      .subscribe((response: any) => {
+        if (response) {
+          this.tournamentList = response.tournament;
+        }
+      });
   }
 }
