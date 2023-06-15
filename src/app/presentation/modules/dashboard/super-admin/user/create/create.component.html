@@ -12,11 +12,8 @@
             <td class="pl-5">
               <select [(ngModel)]="user.role" class="select w-full max-w-xs border select-sm bg-white" title="select role">
                 <option disabled selected>Select</option>
-                <option>Homer</option>
-                <option>Marge</option>
-                <option>Bart</option>
-                <option>Lisa</option>
-                <option>Maggie</option>
+                <option *ngFor="let role of roles"  value="{{role.id}}">{{role.desc}}</option>
+               
               </select>
             </td>
           </tr>

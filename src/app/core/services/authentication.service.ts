@@ -19,10 +19,11 @@ export class AuthenticationService   {
       Roles.SUPER_ADMIN ,
       Roles.TEAM_ADMIN ,
       Roles.TEAM_MANAGER ,
+      Roles.REFEREE ,
       Roles.DATA_MANAGER ,
       Roles.LEAGUE_DIRECTOR ,
       Roles.GENERAL_COORDINATOR ,
-      Roles.REFEREE ,
+    
       Roles.MATCH_COMMISSIONER ,
       Roles.REFEREE_ASSESSOR ,
       
