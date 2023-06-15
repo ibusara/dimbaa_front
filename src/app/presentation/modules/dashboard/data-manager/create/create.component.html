@@ -11,6 +11,9 @@
       <div class="mt-5 w-full">
         <app-data-manager-create-match
           *ngIf="form=='match'"
+          [teamList]="teamList"
+          [stadiumList]="stadiumList"
+          [tournamentList]="tournamentList"
         ></app-data-manager-create-match>
         <app-data-manager-create-tournament
           *ngIf="form=='tournament'"

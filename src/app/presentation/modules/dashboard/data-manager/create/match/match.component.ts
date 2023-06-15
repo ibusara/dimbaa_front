@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { MatchEvent } from 'src/app/core/models/matchEvent.model';
 import { StateManagementService } from 'src/app/core/services/state-management.service';
 
@@ -10,10 +10,17 @@ import { StateManagementService } from 'src/app/core/services/state-management.s
 })
 export class MatchComponent implements OnInit {
   matchEvent: MatchEvent = new MatchEvent();
+  @Input() teamList: any = [];
+  @Input() stadiumList: any = [];
+  @Input() tournamentList: any = [];
 
-  constructor(private dataManagerService: StateManagementService) {}
+  constructor(
+    private dataManagerService: StateManagementService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   onCreate() {
     let model: any = {};
@@ -29,4 +36,6 @@ export class MatchComponent implements OnInit {
       alert(res.message);
     });
   }
+
+
 }

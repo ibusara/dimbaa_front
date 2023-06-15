@@ -9,7 +9,21 @@ import { StateManagementService } from 'src/app/core/services/state-management.s
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataManagerEditMatchComponent implements OnInit {
-  @Input() data!: any;
+  @Input() set data(data: any){
+    if(data){
+      this.matchEvent.away_team = data.away_team_id;
+      this.matchEvent.tournament = data.tournament_id;
+      this.matchEvent.city = data.city;
+      this.matchEvent.home_team = data.home_team_id;
+      this.matchEvent.stadium = data.stadium_id;
+      this.matchEvent.date = data.date;
+      this.matchEvent.round = data.round;
+      this.matchEvent.venue = data.venue;
+    }
+  };
+  @Input() teamList: any = [];
+  @Input() stadiumList: any = [];
+  @Input() tournamentList: any = [];
 
   message: any = null;
 
