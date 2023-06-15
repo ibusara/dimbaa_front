@@ -96,6 +96,8 @@ export class DataManagerEditMatchComponent implements OnInit {
     model['stadium'] = this.matchEvent.stadium;
     model['tournament'] = this.matchEvent.tournament;
     model['venue'] = this.matchEvent.venue;
-    this.dataManagerService.updateMatchEvent(model).subscribe((res: any) => {});
+    this.dataManagerService.updateMatchEvent(model).subscribe((res: any) => {
+      alert(res.message)
+    });
   }
 }
