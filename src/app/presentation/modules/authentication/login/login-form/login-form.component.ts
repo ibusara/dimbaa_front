@@ -17,9 +17,9 @@ export class LoginFormComponent implements OnInit {
       Validators.required,
       Validators.email
     ]),
-    password: new FormControl('password', [
+    password: new FormControl('123456', [
       Validators.required,
-      Validators.minLength(8)
+      Validators.minLength(6)
     ]),
   })
 
@@ -29,7 +29,12 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    this.loginService.login(this.loginForm.value);
+    console.log('login');
+    let model: any = {};
+    (model['email'] =  this.loginForm.get('email')?.value  ),
+    (model['password'] = this.loginForm.get('password')?.value );
+    this.loginService.login(model);
+    
   };
 
   get email() { return this.loginForm.get('email') }

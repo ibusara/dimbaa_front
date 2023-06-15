@@ -9,6 +9,9 @@ export enum Roles {
   MATCH_COMMISSIONER = 'match-commissioner',
   REFEREE_ASSESSOR = 'referee-assessor'
 }
+
+  
+
 export class User {
   name: string = ""
   email: string = ""

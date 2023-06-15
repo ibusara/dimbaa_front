@@ -2,20 +2,51 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Roles, User } from '../models/user.model';
+import { BackendApiService } from 'src/app/persistence/base/backend-api.service';
+import { HttpClient } from '@angular/common/http';
+import { UsersService } from 'src/app/persistence/functionalities/users/users.service';
+import { LocalStorageService } from 'src/app/persistence/base/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class AuthenticationService   {
 
   isAuthenticated: boolean = false//!environment.production
   currentUser: User = new User();
-
-  constructor(public router: Router) {
+    rolesCode =[
+      Roles.SUPER_ADMIN ,
+      Roles.SUPER_ADMIN ,
+      Roles.TEAM_ADMIN ,
+      Roles.TEAM_MANAGER ,
+      Roles.DATA_MANAGER ,
+      Roles.LEAGUE_DIRECTOR ,
+      Roles.GENERAL_COORDINATOR ,
+      Roles.REFEREE ,
+      Roles.MATCH_COMMISSIONER ,
+      Roles.REFEREE_ASSESSOR ,
+      
+  ];
+  access_token : string='';
+  constructor(public router: Router  , public userService : UsersService,
+    private ls : LocalStorageService ) {
+   
     //this.currentUser.role = Roles.SUPER_ADMIN
   }
 
   login(data: any) {
+    console.log(data);
+    this.userService.login(data).subscribe( (res:any) =>{
+        console.log(res);
+        if( res.success){
+          this.isAuthenticated = true;
+          this.currentUser = res.user;
+          this.currentUser.role = this.rolesCode[res.user.role.id];
+          this.ls.save('token', res.access_token);
+          this.router.navigate(['dashboard']);
+        }
+    });
+    /*
     this.isAuthenticated = true;
     if (data.email == "superadmin@dimbaa.com") {
       this.currentUser.role = Roles.SUPER_ADMIN
@@ -47,7 +78,7 @@ export class AuthenticationService {
     } else {
       alert("user not found");
       this.router.navigate(['login']);
-    }
+    }*/
   }
 
   logout() {
@@ -59,4 +90,5 @@ export class AuthenticationService {
   getUser() {
     return this.currentUser;
   }
+  
 }
