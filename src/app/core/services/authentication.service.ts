@@ -21,8 +21,9 @@ export class AuthenticationService   {
       Roles.TEAM_MANAGER ,
       Roles.REFEREE ,
       Roles.DATA_MANAGER ,
-      Roles.LEAGUE_DIRECTOR ,
       Roles.GENERAL_COORDINATOR ,
+      Roles.LEAGUE_DIRECTOR ,
+    
     
       Roles.MATCH_COMMISSIONER ,
       Roles.REFEREE_ASSESSOR ,

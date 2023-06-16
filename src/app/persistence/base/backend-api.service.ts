@@ -23,6 +23,10 @@ export class BackendApiService {
     return this.http.post<T>(this.apiUrl + url, data, { headers: this.getHeaders() });
   }
 
+  postMultipart<T>(url: string, data: any) {
+    return this.http.post<T>(this.apiUrl + url, data, { headers: this.getMultipartHeaders() });
+  }
+
   put<T>(url: string, data: any) {
     return this.http.put<T>(this.apiUrl + url, data, { headers: this.getHeaders() });
   }
@@ -37,6 +41,17 @@ export class BackendApiService {
     let headers= {
       'Content-Type': 'application/json',
       Accept: 'application/json',
+      Authorization: 'Bearer '+this.ls.retrieve('token'),
+       
+    }
+    return headers;
+  }
+
+
+  getMultipartHeaders(){
+    let headers= {
+      'Content-Type': 'multipart/form-data',
+       
       Authorization: 'Bearer '+this.ls.retrieve('token'),
        
     }

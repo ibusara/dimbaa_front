@@ -10,60 +10,47 @@
           <tr>
             <td class="text-right pt-4">Location:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="stadium.location" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
           <tr>
             <td class="text-right pt-4">Capacity:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="stadium.capacity" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
           <tr>
             <td class="text-right pt-4">Stadium Owner:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="stadium.stadium_owner" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
           <tr>
             <td class="text-right pt-4">Stadium Name:</td>
             <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input type="text" [(ngModel)]="stadium.name" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
-          <tr>
-            <td class="text-right pt-4">City:</td>
-            <td class="pl-5">
-              <input type="text" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
-            </td>
-          </tr>
+           
           <tr>
             <td class="text-right pt-4">Inauguration date:</td>
             <td class="pl-5">
-              <input type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
+              <input  [(ngModel)]="stadium.inauguration_date" type="date" placeholder="Type here" class="input input-sm w-full max-w-xs bg-white" />
             </td>
           </tr>
           <tr>
             <td class="text-right pt-4">Stadium image:</td>
             <td class="pl-5">
-              <input type="file" placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
+              <input type="file"  (change)="onFileChange($event)" [(ngModel)]="stadium.stadium_picture"  placeholder="Type here" class="input input-file w-full max-w-xs bg-white" />
             </td>
           </tr>
-          <tr>
-            <td class="text-right pt-4">Team(s):</td>
-            <td class="pl-5">
-              <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
-                <option disabled selected>Select</option>
-                <option>Dar es Salaam</option>
-              </select>
-            </td>
-          </tr>
+          
           <tr>
             <td class="text-right pt-4">Region:</td>
             <td class="pl-5">
-              <select class="select w-full max-w-xs border select-sm bg-white" title="select role">
+              <select [(ngModel)]="stadium.region" class="select w-full max-w-xs border select-sm bg-white" title="select role">
                 <option disabled selected>Select</option>
-                <option>Dar es Salaam</option>
+                <option value="est">Dar es Salaam</option>
               </select>
             </td>
           </tr>

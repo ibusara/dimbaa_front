@@ -11,8 +11,8 @@ export class StadiaService extends BackendApiService{
     return this.get<ApiResponse>('admin/stadia');
   }
 
-  store<ApiResponse>(stadium: Stadium) {
-    return this.post<ApiResponse>('admin/stadia', stadium);
+  store<ApiResponse>(stadium: FormData) {
+    return this.postMultipart<ApiResponse>('admin/stadia', stadium);
   }
 
   show<ApiResponse>(stadium: Stadium) {
