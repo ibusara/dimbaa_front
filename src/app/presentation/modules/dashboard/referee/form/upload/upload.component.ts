@@ -27,8 +27,17 @@ export class UploadComponent implements OnInit {
       case 2:
         this.saveUploadResult();
         break;
+      case 4:
+        this.saveStartingPlayer();
+        break;
+      case 5:
+        this.saveReservePlayer();
+        break;
       case 7:
         this.saveSubstitution();
+        break;
+      case 9:
+        this.saveAssistants();
         break;
     }
   }
@@ -69,7 +78,20 @@ export class UploadComponent implements OnInit {
 
   saveStartingPlayer() {
     let model: any = {};
+
+    let team1Starting: any = {};
+    team1Starting['stadium_id'] = '1';
+    team1Starting['name'] = '1';
+    team1Starting['region'] = '1';
+
+    let team2Starting: any = {};
+    team2Starting['stadium_id'] = '1';
+    team2Starting['name'] = '1';
+    team2Starting['region'] = '1';
+
     model['match'] = 1;
+    model['team1_starting'] = team1Starting;
+    model['team2_starting'] = team2Starting;
     this.refereeService
       .matchStartingPlayer(model)
       .subscribe((response: any) => {
@@ -81,7 +103,20 @@ export class UploadComponent implements OnInit {
 
   saveReservePlayer() {
     let model: any = {};
+
+    let team1Reserve: any = {};
+    team1Reserve['stadium_id'] = '1';
+    team1Reserve['name'] = '1';
+    team1Reserve['region'] = '1';
+
+    let team2Reserve: any = {};
+    team2Reserve['stadium_id'] = '1';
+    team2Reserve['name'] = '1';
+    team2Reserve['region'] = '1';
+
     model['match'] = 1;
+    model['team1_reserve'] = team1Reserve;
+    model['team1_reserve'] = team2Reserve;
     this.refereeService.matchReservePlayer(model).subscribe((response: any) => {
       if (response) {
         alert(response.message);
@@ -91,7 +126,7 @@ export class UploadComponent implements OnInit {
 
   saveSubstitution() {
     let model: any = {};
-    model['match'] = "1";
+    model['match'] = '1';
     model['team'] = this.uploadHelper.substitution.team;
     model['minute'] = this.uploadHelper.substitution.minute;
     model['in'] = this.uploadHelper.substitution.in;
@@ -101,5 +136,40 @@ export class UploadComponent implements OnInit {
         alert(response.message);
       }
     });
+  }
+
+  saveCaution() {
+    let model: any = {};
+    model['match'] = '1';
+    model['team'] = this.uploadHelper.substitution.team;
+    model['minute'] = this.uploadHelper.substitution.minute;
+    model['warning_card'] = this.uploadHelper.substitution.in;
+    model['player'] = this.uploadHelper.substitution.player;
+    this.refereeService.matchSubstitution(model).subscribe((response: any) => {
+      if (response) {
+        alert(response.message);
+      }
+    });
+  }
+
+  saveAssistants(){
+    let model:any = {};
+    model['match'] = '1';
+    model['full_name'] = this.uploadHelper.assistantOfficial.fullName;
+    model['district'] = this.uploadHelper.assistantOfficial.district;
+    model['region'] = this.uploadHelper.assistantOfficial.region;
+    model['tel_number'] = this.uploadHelper.assistantOfficial.telNumber;
+    model['email'] = this.uploadHelper.assistantOfficial.email;
+    model['game_no_tpl'] = this.uploadHelper.assistantOfficial.gameNoTpl;
+    model['game_no_other'] = this.uploadHelper.assistantOfficial.gameNoOther;
+    model['match_payment'] = this.uploadHelper.assistantOfficial.matchPayment;
+    model['commissioner'] = this.uploadHelper.assistantOfficial.commissioner;
+    // model['referee_assessor'] =
+    //   this.uploadHelper.assistantOfficial.refereeAccessor;
+
+    this.refereeService.officialAssistant(model)
+      .subscribe((response: any) => {
+        alert(response.message);
+      })
   }
 }
