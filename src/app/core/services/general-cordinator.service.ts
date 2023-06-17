@@ -39,7 +39,12 @@ export class generalCoordinatorService {
       this.appUtils.GetAppApiHeaders()
     );
   }
-
+  getRegions(): Observable<any> {
+    return this.http.get(
+      this.url + 'general-coordinator/get_region',
+      this.appUtils.GetAppApiHeaders()
+    );
+  }
   createGCMatchOffcial(model: any) {
     return this.http.post(
       this.url + 'general-coordinator/match_official',
