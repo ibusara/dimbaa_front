@@ -11,11 +11,11 @@
 <div class="min-h-[400px] pt-5">
   <div [ngSwitch]="step">
     <app-detail *ngSwitchCase="1"></app-detail>
-    <app-results *ngSwitchCase="2"></app-results>
-    <app-match-officials *ngSwitchCase="3"></app-match-officials>
-    <app-meetings *ngSwitchCase="4"></app-meetings>
-    <app-conditions *ngSwitchCase="5"></app-conditions>
-    <app-environment *ngSwitchCase="6"></app-environment>
+    <app-results *ngSwitchCase="2" [eventHelper]="eventHelper"></app-results>
+    <app-match-officials *ngSwitchCase="3" [eventHelper]="eventHelper"></app-match-officials>
+    <app-meetings *ngSwitchCase="4" [eventHelper]="eventHelper"></app-meetings>
+    <app-conditions *ngSwitchCase="5" [eventHelper]="eventHelper"></app-conditions>
+    <app-environment [eventHelper]="eventHelper" *ngSwitchCase="6"></app-environment>
   </div>
 </div>
 <div class="w-full flex justify-center mt-5">
@@ -23,7 +23,7 @@
     <div class="btn btn-primary btn-outline">
       Reset
     </div>
-    <button class="btn btn-primary text-white">
+    <button class="btn btn-primary text-white" (click)="onSave()">
       Save Draft
     </button>
     <button class="btn btn-primary text-white" (click)="next()">
@@ -31,3 +31,10 @@
     </button>
   </div>
 </div>
+<app-modal *ngIf="message" [toggleModal]="toggleModal">
+  <span buttonContent></span>
+  <div modalContent>
+    <app-alert *ngIf="message" [type]="message.type" [title]="message.title" [message]="message.message"
+      ></app-alert>
+  </div>
+</app-modal>

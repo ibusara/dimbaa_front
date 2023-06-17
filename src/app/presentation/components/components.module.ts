@@ -23,8 +23,6 @@ import { LeagueDirectorMenuComponent } from './main-side-menu/league-director-me
 import { InnerMobileHeaderComponent } from './inner-mobile-header/inner-mobile-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideMenuComponent } from './side-menu/side-menu.component';
-
-
 @NgModule({
   declarations: [
     ModalComponent,

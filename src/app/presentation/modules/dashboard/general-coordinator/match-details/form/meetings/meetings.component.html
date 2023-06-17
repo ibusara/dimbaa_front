@@ -1,9 +1,9 @@
 <div class="w-full flex justify-start mt-5">
   <div class="w-content flex gap-5 font-semibold">
     <p>The countdown was respected by both teams:</p>
-    <input title="radio" type="radio" name="radio-1" class="radio" checked />
+    <input title="radio" type="radio" name="radio-1" class="radio" value="Yes"/>
     <p>Yes</p>
-    <input title="radio" type="radio" name="radio-1" class="radio" />
+    <input title="radio" type="radio" name="radio-1" class="radio" value="No"/>
     <p>No</p>
   </div>
 </div>
@@ -13,21 +13,21 @@
       <!-- label -->
       <p class="font-bold w-2/5">Meeting date:</p>
       <div class="form-control w-3/5">
-        <input type="date" class="input input-bordered w-full" title="Meeting date:" title="some title" />
+        <input [(ngModel)]="eventHelper.gcMeeting.meeting_date" type="date" class="input input-bordered w-full" title="Meeting date:" title="some title" />
       </div>
     </div>
     <div class="flex">
       <!-- label -->
       <p class="font-bold w-2/5">If no Why:</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Meeting date:" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.if_no_meeting" type="text" class="input input-bordered w-full" title="Meeting date:" />
       </div>
     </div>
     <div class="flex">
       <!-- label -->
-      <p class="font-bold w-2/5">Meeting date:</p>
+      <p class="font-bold w-2/5">Comment:</p>
       <div class="form-control w-3/5">
-        <textarea name="comment" id="" class="textarea" title="comment"></textarea>
+        <textarea  [(ngModel)]="eventHelper.gcMeeting.comment" name="comment" id="" class="textarea" title="comment"></textarea>
       </div>
     </div>
     <div class="divider"></div>
@@ -35,9 +35,9 @@
       <!-- label -->
       <p class="font-bold w-2/5">TFF flag raised:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-1" class="radio" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.tff_flag_raised" title="radio" type="radio" name="radio-raised" class="radio" value="Yes"/>
         <p>Yes</p>
-        <input title="radio" type="radio" name="radio-1" class="radio" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.tff_flag_raised" title="radio" type="radio" name="radio-raised" class="radio" value="No"/>
         <p>No</p>
       </div>
     </div>
@@ -45,16 +45,16 @@
       <!-- label -->
       <p class="font-bold w-2/5">On the pole:</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here" />
+        <input [(ngModel)]="eventHelper.gcMeeting.tff_on_the_pole" type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here" />
       </div>
     </div>
     <div class="flex">
       <!-- label -->
       <p class="font-bold w-2/5">Play fair flag raised:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-1" class="radio" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.play_fair_flag_raised" title="radio" type="radio" name="radio-Play-fair" class="radio" value="Yes"/>
         <p>Yes</p>
-        <input title="radio" type="radio" name="radio-1" class="radio" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.play_fair_flag_raised" title="radio" type="radio" name="radio-Play-fair" class="radio" value="No"/>
         <p>No</p>
       </div>
     </div>
@@ -62,7 +62,7 @@
       <!-- label -->
       <p class="font-bold w-2/5">On the pole:</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here" />
+        <input [(ngModel)]="eventHelper.gcMeeting.pff_on_the_pole" type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here" />
       </div>
     </div>
   </div>
@@ -72,9 +72,9 @@
       <!-- label -->
       <p class="font-bold w-2/5">Position of benches respected by both teams:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-1" class="radio radio-primary" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.position_benches_respected_both_teams"title="radio" type="radio" name="radio-benches" class="radio radio-primary" value="Yes"/>
         <p>Yes</p>
-        <input title="radio" type="radio" name="radio-1" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.position_benches_respected_both_teams" title="radio" type="radio" name="radio-benches" class="radio radio-primary" value="No"/>
         <p>No</p>
       </div>
     </div>
@@ -82,18 +82,18 @@
       <!-- label -->
       <p class="font-bold w-2/5">If no why?:</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
+        <input  [(ngModel)]="eventHelper.gcMeeting.not_respected_reason" type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
       </div>
     </div>
     <div class="flex">
       <!-- label -->
       <p class="font-bold w-2/5">Performance of flag bearers:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-2" class="radio radio-primary" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_flag_bearers" title="radio" type="radio" name="radio-bearers" class="radio radio-primary" value="Good"/>
         <p>Good</p>
-        <input title="radio" type="radio" name="radio-2" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_flag_bearers" title="radio" type="radio" name="radio-bearers" class="radio radio-primary" value="Average"/>
         <p>Average</p>
-        <input title="radio" type="radio" name="radio-2" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_flag_bearers" title="radio" type="radio" name="radio-bearers" class="radio radio-primary" value="Bad"/>
         <p>Bad</p>
       </div>
     </div>
@@ -101,11 +101,11 @@
       <!-- label -->
       <p class="font-bold w-2/5">Performance of ball boys:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-3" class="radio radio-primary" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_ball_boys" title="radio" type="radio" name="radio-3" class="radio radio-primary" value="Good"/>
         <p>Good</p>
-        <input title="radio" type="radio" name="radio-3" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_ball_boys" title="radio" type="radio" name="radio-3" class="radio radio-primary" value="Average"/>
         <p>Average</p>
-        <input title="radio" type="radio" name="radio-3" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_ball_boys" title="radio" type="radio" name="radio-3" class="radio radio-primary" value="Bad"/>
         <p>Bad</p>
       </div>
     </div>
@@ -113,11 +113,11 @@
       <!-- label -->
       <p class="font-bold w-2/5">Performance of team escorts:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-4" class="radio radio-primary" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_team_escorts" title="radio" type="radio" name="radio-4" class="radio radio-primary" value="Good" />
         <p>Good</p>
-        <input title="radio" type="radio" name="radio-4" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_team_escorts" title="radio" type="radio" name="radio-4" class="radio radio-primary" value="Average" />
         <p>Average</p>
-        <input title="radio" type="radio" name="radio-4" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.performance_team_escorts" title="radio" type="radio" name="radio-4" class="radio radio-primary" value="Bad"/>
         <p>Bad</p>
       </div>
     </div>
@@ -125,11 +125,11 @@
       <!-- label -->
       <p class="font-bold w-2/5">Behaviour of the two teams:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" checked />
+        <input  [(ngModel)]="eventHelper.gcMeeting.teams_behaviour" title="radio" type="radio" name="radio-5" class="radio radio-primary" value="Good"/>
         <p>Good</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.teams_behaviour" title="radio" type="radio" name="radio-5" class="radio radio-primary" value="Average">
         <p>Average</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMeeting.teams_behaviour" title="radio" type="radio" name="radio-5" class="radio radio-primary" value="Bad"/>
         <p>Bad</p>
       </div>
     </div>

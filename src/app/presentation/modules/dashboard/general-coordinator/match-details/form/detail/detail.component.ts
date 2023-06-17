@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { generalCoordinatorService } from 'src/app/core/services/general-cordinator.service';
 
 @Component({
   selector: 'app-detail',
@@ -8,9 +9,16 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalCoordinatorService: generalCoordinatorService) { }
 
   ngOnInit(): void {
+ //   this.getDetails();
   }
-
+  getDetails() {
+    this.generalCoordinatorService.getGCDetails().subscribe((res: any) => {
+      if (res) {
+       // this.table.data = res.match;
+      }
+    });
+  }
 }

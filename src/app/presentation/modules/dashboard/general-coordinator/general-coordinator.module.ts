@@ -19,6 +19,7 @@ import { MatchOfficialsComponent } from './match-details/form/match-officials/ma
 import { MeetingsComponent } from './match-details/form/meetings/meetings.component';
 import { ConditionsComponent } from './match-details/form/conditions/conditions.component';
 import { EnvironmentComponent } from './match-details/form/environment/environment.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { EnvironmentComponent } from './match-details/form/environment/environme
   ],
   imports: [
     CommonModule,
+    FormsModule,
     GeneralCoordinatorRoutingModule,
     ComponentsModule
   ]

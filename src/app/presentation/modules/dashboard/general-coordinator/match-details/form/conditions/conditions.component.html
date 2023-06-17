@@ -4,9 +4,9 @@
       <!-- label -->
       <p class="font-bold w-2/5">Where there any incidents during the match?</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-1" class="radio radio-primary" checked />
+        <input  [(ngModel)]="eventHelper.gcMatchCondition.incident_during_team_check" title="radio" type="radio" name="radio-1" class="radio radio-primary" value="Yes" />
         <p>Yes</p>
-        <input title="radio" type="radio" name="radio-1" class="radio radio-primary" />
+        <input  [(ngModel)]="eventHelper.gcMatchCondition.incident_during_team_check" title="radio" type="radio" name="radio-1" class="radio radio-primary" value="No"/>
         <p>No</p>
       </div>
     </div>
@@ -14,7 +14,7 @@
       <!-- label -->
       <p class="font-bold w-2/5">If no why?</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
+        <input [(ngModel)]="eventHelper.gcMatchCondition.incident_reason" type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
       </div>
     </div>
     <div class="divider"></div>
@@ -22,11 +22,11 @@
       <!-- label -->
       <p class="font-bold w-2/5">Condition of the pitch:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" checked />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.pitch_condition" title="radio" type="radio" name="radio-5-pitch_condition" class="radio radio-primary" value="1" />
         <p>Good</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.pitch_condition" title="radio" type="radio" name="radio-5-pitch_condition" class="radio radio-primary" value="2"/>
         <p>Average</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.pitch_condition" title="radio" type="radio" name="radio-5-pitch_condition" class="radio radio-primary" value="3"/>
         <p>Bad</p>
       </div>
     </div>
@@ -35,11 +35,11 @@
       <!-- label -->
       <p class="font-bold w-2/5">Condition of the dressing room:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" checked />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.dressing_room_condition" title="radio" type="radio" name="radio-5-dressing_room" class="radio radio-primary" value="Good" />
         <p>Good</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.dressing_room_condition" title="radio" type="radio" name="radio-5-dressing_room" class="radio radio-primary" value="Average"/>
         <p>Average</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.dressing_room_condition" title="radio" type="radio" name="radio-5-dressing_room" class="radio radio-primary" value="Bad"/>
         <p>Bad</p>
       </div>
     </div>
@@ -49,9 +49,9 @@
       <!-- label -->
       <p class="font-bold w-2/5">Stretchers:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" checked />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.stretcher_available" title="radio" type="radio" name="radio-5-stretcher" class="radio radio-primary" value="Available" />
         <p>Available</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.stretcher_available" title="radio" type="radio" name="radio-5-stretcher" class="radio radio-primary" value="Not available" />
         <p>Not available</p>
       </div>
     </div>
@@ -59,9 +59,9 @@
       <!-- label -->
       <p class="font-bold w-2/5">Ambulance:</p>
       <div class="form-control w-3/5 flex gap-4 flex-row">
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" checked />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.ambulance_available" title="radio" type="radio" name="radio-5" class="radio radio-primary" value="Available" />
         <p>Available</p>
-        <input title="radio" type="radio" name="radio-5" class="radio radio-primary" />
+        <input [(ngModel)]="eventHelper.gcMatchCondition.ambulance_available" title="radio" type="radio" name="radio-5" class="radio radio-primary" value="Not available"/>
         <p>Not available</p>
       </div>
     </div>
@@ -69,14 +69,14 @@
       <!-- label -->
       <p class="font-bold w-2/5">No of stretchers:</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
+        <input [(ngModel)]="eventHelper.gcMatchCondition.no_of_stretcher" type="number" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
       </div>
     </div>
     <div class="flex">
       <!-- label -->
       <p class="font-bold w-2/5">No of ambulances:</p>
       <div class="form-control w-3/5">
-        <input type="text" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
+        <input [(ngModel)]="eventHelper.gcMatchCondition.no_of_ambulance" type="number" class="input input-bordered w-full" title="Type" placeholder="Type Here"/>
       </div>
     </div>
   </div>

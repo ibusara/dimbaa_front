@@ -1,0 +1,22 @@
+// Assign GCMeeting
+export interface GCMeeting {
+  id?: string,
+  match_id?: string,
+  user_id?: string,
+  match_coordination_meeting?: string,
+  meeting_date?: string,
+  if_no_meeting?: string,
+  comment?: string,
+  tff_flag_raised?: string,
+  tff_on_the_pole?: string,
+  play_fair_flag_raised?: string,
+  pff_on_the_pole?: string,
+  position_benches_respected_both_teams?: string,
+  not_respected_reason?: string,
+  performance_flag_bearers?: string,
+  performance_ball_boys?: string,
+  performance_team_escorts?: string,
+  teams_behaviour?: string,
+  created_at?: string,
+  updated_at?: string,
+}

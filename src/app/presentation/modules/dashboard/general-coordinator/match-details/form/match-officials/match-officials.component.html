@@ -13,15 +13,18 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select class="select w-full max-w-xs" [(ngModel)]="eventHelper.gcMatchOffcial.referee_user">
+          <option value="" disabled selected="selected">Select</option>
+          <option *ngFor="let user of allUsers" value="{{user.id}}">{{user.name}}</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.referee_region" class="select w-full max-w-xs" title="select region">
+          <option disabled selected>Select</option>
+          <option value="Region">Region</option>
+          <option value="Region">Region</option>
         </select>
       </div>
     </div>
@@ -34,15 +37,18 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select  [(ngModel)]="eventHelper.gcMatchOffcial.assistant_referee_one_user" class="select w-full max-w-xs" title="select official">
+          <option disabled selected>Select</option>
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.assistant_referee_one_region" class="select w-full max-w-xs" title="select region">
+          <option disabled selected>Select</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -55,15 +61,18 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.assistant_referee_two_user" class="select w-full max-w-xs" title="select official">
+          <option disabled selected>Select</option>
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.assistant_referee_two_region" class="select w-full max-w-xs" title="select region">
+          <option disabled selected>Select</option>
+          <option value="1" selected>Match official:</option>
         </select>
       </div>
     </div>
@@ -76,15 +85,19 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.fourth_official_user" class="select w-full max-w-xs" title="select official">7
+          <option disabled selected>Select</option>
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.fourth_official_region" class="select w-full max-w-xs" title="select region">
+          <option disabled selected>Select</option>
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -97,15 +110,17 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.commissionar_user" class="select w-full max-w-xs" title="select official">
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select  [(ngModel)]="eventHelper.gcMatchOffcial.commissionar_region" class="select w-full max-w-xs" title="select region">
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -118,15 +133,17 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select  [(ngModel)]="eventHelper.gcMatchOffcial.match_doctor_user" class="select w-full max-w-xs" title="select official">
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.match_doctor_region" class="select w-full max-w-xs" title="select region">
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -139,15 +156,17 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select  [(ngModel)]="eventHelper.gcMatchOffcial.officer_for_marketing_user" class="select w-full max-w-xs" title="select official">
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.officer_for_marketing_region" class="select w-full max-w-xs" title="select region">
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -160,15 +179,17 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select  [(ngModel)]="eventHelper.gcMatchOffcial.media_officer_user" class="select w-full max-w-xs" title="select official">
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.media_officer_region" class="select w-full max-w-xs" title="select region">
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -181,15 +202,17 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.security_officer_user" class="select w-full max-w-xs" title="select official">
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.security_officer_region" class="select w-full max-w-xs" title="select region">
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>
@@ -202,15 +225,17 @@
     <!-- form -->
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select official">
-          <option disabled selected>Match official:</option>
+        <select  [(ngModel)]="eventHelper.gcMatchOffcial.general_coordinator_user" class="select w-full max-w-xs" title="select official">
+          <option value="1" selected>Match official:</option>
+          <option value="2" selected>Match official:</option>
         </select>
       </div>
     </div>
     <div class="w-1/3">
       <div class="form-control">
-        <select class="select w-full max-w-xs" title="select region">
-          <option disabled selected>Region</option>
+        <select [(ngModel)]="eventHelper.gcMatchOffcial.general_coordinator_region" class="select w-full max-w-xs" title="select region">
+          <option value="Region" selected>Region</option>
+          <option value="Region" selected>Region</option>
         </select>
       </div>
     </div>

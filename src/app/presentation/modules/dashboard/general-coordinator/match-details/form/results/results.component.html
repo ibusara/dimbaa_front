@@ -14,10 +14,10 @@
       <div class="flex">
         <div class="w-1/2 flex gap-5">
           <div class="form-control">
-            <input type="text" class="input" title="team score" placeholder="Team A">
+            <input [(ngModel)]="eventHelper.gcTeamResult.final_score_extra_team_1" type="number" class="input" title="team score" placeholder="Team A">
           </div>
           <div class="form-control">
-            <input type="text" class="input" title="team score" placeholder="Team B">
+            <input [(ngModel)]="eventHelper.gcTeamResult.final_score_extra_team_2" type="number" class="input" title="team score" placeholder="Team B">
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
       <!-- form -->
       <div class="w-2/3">
         <div class="form-control">
-          <input type="text" class="input" title="input form" placeholder="Enter here">
+          <input [(ngModel)]="eventHelper.gcTeamResult.extra_time_score_team_1" type="number" class="input" title="input form" placeholder="Enter here">
         </div>
       </div>
     </div>
@@ -47,10 +47,10 @@
       <div class="flex">
         <div class="w-1/2 flex gap-5">
           <div class="form-control">
-            <input type="text" class="input" title="team score" placeholder="Team A">
+            <input [(ngModel)]="eventHelper.gcTeamResult.penalty_team_1" type="number" class="input" title="team score" placeholder="Team A">
           </div>
           <div class="form-control">
-            <input type="text" class="input" title="team score" placeholder="Team B">
+            <input [(ngModel)]="eventHelper.gcTeamResult.penalty_team_2" type="number" class="input" title="team score" placeholder="Team B">
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
       <!-- form -->
       <div class="w-2/3">
         <div class="form-control">
-          <input type="text" class="input" title="input form" placeholder="Enter here">
+          <input [(ngModel)]="eventHelper.gcTeamResult.favour_of_team_1" type="text" class="input" title="input form" placeholder="Enter here">
         </div>
       </div>
     </div>
@@ -80,10 +80,10 @@
       <div class="flex">
         <div class="w-1/2 flex gap-5">
           <div class="form-control">
-            <input type="text" class="input" title="team score" placeholder="Team A">
+            <input [(ngModel)]="eventHelper.gcTeamResult.final_score_favour_team_1" type="number" class="input" title="team score" placeholder="Team A">
           </div>
           <div class="form-control">
-            <input type="text" class="input" title="team score" placeholder="Team B">
+            <input [(ngModel)]="eventHelper.gcTeamResult.final_score_favour_team_2" type="number" class="input" title="team score" placeholder="Team B">
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@
       <!-- form -->
       <div class="w-2/3">
         <div class="form-control">
-          <input type="text" class="input" title="input form" placeholder="Enter here">
+          <input [(ngModel)]="eventHelper.gcTeamResult.favour_of_team_2" type="text" class="input" title="input form" placeholder="Enter here">
         </div>
       </div>
     </div>
