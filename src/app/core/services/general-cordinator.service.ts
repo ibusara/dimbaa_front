@@ -20,7 +20,7 @@ export class generalCoordinatorService {
 
   getGCDetails(): Observable<any> {
     return this.http.get(
-      this.url + 'general-coordinator/details',
+      this.url + 'general-coordinator/details/1',
       this.appUtils.GetAppApiHeaders()
     );
   }

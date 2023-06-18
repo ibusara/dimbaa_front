@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class MatchDetailFormComponent implements OnInit {
   message: any = null;
+  detailsData: any = {};
   eventHelper: EventHelper = new EventHelper();
   step = 1
   constructor(private generalCoordinatorService: generalCoordinatorService,
@@ -17,8 +18,16 @@ export class MatchDetailFormComponent implements OnInit {
   toggleModal: Subject<boolean> = new Subject();
   ngOnInit(): void {
     this.SuccessPopUp();
+    this.getDetails();
   }
-
+  getDetails() {
+    this.generalCoordinatorService.getGCDetails().subscribe((res: any) => {
+      if (res) {
+        this.detailsData = res?.data;
+        console.log(this.detailsData);
+      }
+    });
+  }
   next() {
     if (this.step == 6) {
       this.saveNameEnviroment();

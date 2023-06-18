@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { generalCoordinatorService } from 'src/app/core/services/general-cordinator.service';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-detail',
@@ -8,17 +7,10 @@ import { generalCoordinatorService } from 'src/app/core/services/general-cordina
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetailComponent implements OnInit {
-
-  constructor(private generalCoordinatorService: generalCoordinatorService) { }
+  @Input() detailsData: any = {};
+  constructor() { }
 
   ngOnInit(): void {
- //   this.getDetails();
-  }
-  getDetails() {
-    this.generalCoordinatorService.getGCDetails().subscribe((res: any) => {
-      if (res) {
-       // this.table.data = res.match;
-      }
-    });
+
   }
 }
