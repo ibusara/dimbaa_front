@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { InnerTable } from 'src/app/core/interfaces/inner-table';
+import { TeamManagerService } from 'src/app/core/services/team-manager.service';
 
 @Component({
   templateUrl: './upcoming.component.html',
@@ -40,10 +41,12 @@ export class UpcomingComponent implements OnInit {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private teamManagerService: TeamManagerService
   ) { }
 
   ngOnInit(): void {
+    // this.getTeamPlayerList();
   }
 
   handleView(e: any) {

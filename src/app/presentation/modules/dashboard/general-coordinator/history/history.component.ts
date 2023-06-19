@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { InnerTable } from 'src/app/core/interfaces/inner-table';
-import { generalCoordinatorService } from 'src/app/core/services/general-cordinator.service';
+import { GeneralCoordinatorService } from 'src/app/core/services/general-cordinator.service';
 
 @Component({
   templateUrl: './history.component.html',
@@ -41,7 +41,7 @@ export class GeneralCoordinatorHistoryComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private generalCoordinatorService: generalCoordinatorService
+    private generalCoordinatorService: GeneralCoordinatorService
   ) { }
 
   ngOnInit(): void {

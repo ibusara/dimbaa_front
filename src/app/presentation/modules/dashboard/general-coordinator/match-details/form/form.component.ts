@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
 import { EventHelper } from './event-helper';
-import { generalCoordinatorService } from 'src/app/core/services/general-cordinator.service';
+import { GeneralCoordinatorService } from 'src/app/core/services/general-cordinator.service';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ export class MatchDetailFormComponent implements OnInit {
   detailsData: any = {};
   eventHelper: EventHelper = new EventHelper();
   step = 1
-  constructor(private generalCoordinatorService: generalCoordinatorService,
+  constructor(private generalCoordinatorService: GeneralCoordinatorService,
     private ref: ChangeDetectorRef
   ) { }
   toggleModal: Subject<boolean> = new Subject();

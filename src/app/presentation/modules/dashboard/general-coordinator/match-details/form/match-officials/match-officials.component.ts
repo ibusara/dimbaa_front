@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { EventHelper } from '../event-helper';
-import { generalCoordinatorService } from 'src/app/core/services/general-cordinator.service';
+import { GeneralCoordinatorService } from 'src/app/core/services/general-cordinator.service';
 
 @Component({
   selector: 'app-match-officials',
@@ -10,7 +10,7 @@ import { generalCoordinatorService } from 'src/app/core/services/general-cordina
 })
 export class MatchOfficialsComponent implements OnInit {
   @Input() eventHelper: EventHelper = new EventHelper();
-  constructor( private generalCoordinatorService: generalCoordinatorService) { }
+  constructor( private generalCoordinatorService: GeneralCoordinatorService) { }
   regions : any = [];
   allUsers = [{
     id: 1,
