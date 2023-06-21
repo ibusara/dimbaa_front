@@ -1,5 +1,6 @@
 export class TeamEventHelper {
   public teamPlayingXI: TeamPlayingXI = new TeamPlayingXI();
+  public teamStaff: TeamStaff = new TeamStaff();
 }
 
 export class TeamPlayingXI {
@@ -89,5 +90,64 @@ export class TeamPlayingXI {
   fifa_id_P11: string = '';
   signature_P11: string = '';
   player_image_P11: string = '';
+
+}
+
+export class TeamStaff {
+  id: string = '';
+  match_id: string = '';
+  firstName: string = '';
+  lastName: string = '';
+  jobdescription: string = '';
+  middleName: string = '';
+  name: string = '';
+  staffPic: string = '';
+  created_at: string = '';
+  updated_at: string = '';
+  jobdescription_P1: string = '';
+  name_P1: string = '';
+  team_id_P1: string = '';
+  signature_P1: string = '';
+  player_image_P1: string = '';
+  jobdescription_P2: string = '';
+  name_P2: string = '';
+  team_id_P2: string = '';
+  signature_P2: string = '';
+  player_image_P2: string = '';
+  jobdescription_P3: string = '';
+  name_P3: string = '';
+  team_id_P3: string = '';
+  signature_P3: string = '';
+  player_image_P3: string = '';
+  jobdescription_P4: string = '';
+  name_P4: string = '';
+  team_id_P4: string = '';
+  signature_P4: string = '';
+  player_image_P4: string = '';
+  jobdescription_P5: string = '';
+  name_P5: string = '';
+  team_id_P5: string = '';
+  signature_P5: string = '';
+  player_image_P5: string = '';
+  jobdescription_P6: string = '';
+  name_P6: string = '';
+  team_id_P6: string = '';
+  signature_P6: string = '';
+  player_image_P6: string = '';
+  jobdescription_P7: string = '';
+  name_P7: string = '';
+  team_id_P7: string = '';
+  signature_P7: string = '';
+  player_image_P7: string = '';
+  jobdescription_P8: string = '';
+  name_P8: string = '';
+  team_id_P8: string = '';
+  signature_P8: string = '';
+  player_image_P8: string = '';
+  jobdescription_P9: string = '';
+  name_P9: string = '';
+  team_id_P9: string = '';
+  signature_P9: string = '';
+  player_image_P9: string = '';
 
 }

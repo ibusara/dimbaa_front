@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TeamManagerService } from 'src/app/core/services/team-manager.service';
 
 @Component({
   selector: 'app-play-formation',
@@ -7,9 +8,14 @@ import { Component } from '@angular/core';
 })
 export class PlayFormationComponent {
   formation = null;
+  constructor( private teamManagerService: TeamManagerService) { }
   setData(value: any){
     if(value){
       this.formation = value.target.value;
     }
   }
+  ngOnInit(): void {
+   
+  }
+
 }

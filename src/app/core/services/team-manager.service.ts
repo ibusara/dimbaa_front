@@ -17,4 +17,18 @@ export class TeamManagerService {
       this.appUtils.GetAppApiHeaders()
     );
   }
+
+  getStaffList(): Observable<any> {
+    return this.http.get(
+      this.url + 'teammanager/staffs',
+      this.appUtils.GetAppApiHeaders()
+    );
+  }
+
+  getDetails(): Observable<any> {
+    return this.http.get(
+      this.url + 'teammanager/details/1',
+      this.appUtils.GetAppApiHeaders()
+    );
+  }
 }

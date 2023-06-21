@@ -10,10 +10,10 @@
 </div>
 <div class=" min-h-[400px]">
   <div [ngSwitch]="step">
-    <app-details *ngSwitchCase="1"></app-details>
+    <app-details *ngSwitchCase="1" [details]="details"></app-details>
     <app-starting-players *ngSwitchCase="2" [teamEventHelper]="teamEventHelper" [playerList]="playersList"></app-starting-players>
-    <app-substitutions *ngSwitchCase="3"></app-substitutions>
-    <app-team-leaders *ngSwitchCase="4"></app-team-leaders>
+    <app-substitutions *ngSwitchCase="3" [teamEventHelper]="teamEventHelper" [subPlayersList]="playersList"></app-substitutions>
+    <app-team-leaders *ngSwitchCase="4"  [teamEventHelper]="teamEventHelper" [staffList]="staffList"></app-team-leaders>
     <app-play-formation *ngSwitchCase="5"></app-play-formation>
     <app-submit *ngSwitchCase="6" (checkBoxClick)="checkedBox($event)"></app-submit>
   </div>

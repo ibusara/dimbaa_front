@@ -11,16 +11,35 @@ export class LineUpFormComponent implements OnInit {
   step = 1
   disbleButton = false;
   playersList: any = [];
+  staffList: any = [];
+  details: any;
   teamEventHelper: TeamEventHelper = new TeamEventHelper();
   constructor(private teamManagerService: TeamManagerService) { }
 
   ngOnInit(): void {
     this.getTeamPlayerList();
+    this.getStaffList();
+    this.getDetails();
   }
   getTeamPlayerList() {
     this.teamManagerService.getTeamPlayerList().subscribe((res: any) => {
       if (res) {
         this.playersList = res?.players;
+      }
+    });
+  }
+  getStaffList() {
+    this.teamManagerService.getStaffList().subscribe((res: any) => {
+      if (res) {
+        this.staffList = res?.Content;
+      }
+    });
+  }
+
+  getDetails() {
+    this.teamManagerService.getDetails().subscribe((res: any) => {
+      if (res) {
+        this.details = res.data;
       }
     });
   }

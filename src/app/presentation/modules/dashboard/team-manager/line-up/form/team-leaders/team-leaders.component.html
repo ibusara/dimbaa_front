@@ -17,411 +17,239 @@
       <div class="flex flex-grow justify-center font-bold max-w-xs select-sm input input-sm w-full bg-white">
       </div>
     </div>
+    <!-- forms 1-->
     <div class="flex flex-row gap-5">
       <div class="flex-grow">
-        <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-        <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-          <option disabled selected>Choose Play Postion</option>
-          <option>Choose Play Postion</option>
-          <option>Choose Play Postion</option>
-          <option>Choose Play Postion</option>
-          <option>Choose Play Postion</option>
-          <option>Choose Play Postion</option>
+        <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P1" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+         (ngModelChange)='filterPlayer($event)'>
+          <option value="" disabled selected="selected">Choose Job Description</option>
+          <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
         </select>
       </div>
       <div class="flex-grow">
-        <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-        <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-          <option disabled selected>Name(Jina)</option>
-          <option>Name(Jina)</option>
-          <option>Name(Jina)</option>
-          <option>Name(Jina)</option>
-          <option>Name(Jina)</option>
-          <option>Name(Jina)</option>
+        <select [(ngModel)]="teamEventHelper.teamStaff.name_P1" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+        (ngModelChange)='mapPlayerPlayerOne($event)' >
+          <option value="" disabled selected="selected">Name(Jina)</option>
+          <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
         </select>
       </div>
       <div class="flex-grow">
-        <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-          <option disabled selected>Nafasi</option>
-          <option>Nafasi</option>
-          <option>Nafasi</option>
-          <option>Nafasi</option>
-        </select>
+        <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P1" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
       </div>
       <div class="flex-grow">
-        <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-        <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-          <option disabled selected>Saini</option>
-          <option>Saini</option>
-          <option>Saini</option>
-          <option>Saini</option>
-        </select>
+        <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P1" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
       </div>
-      <div class="ml-4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-      </div>
+      <span class="w-4 mr-4">
+        <img [src]="teamEventHelper.teamStaff.player_image_P1" alt="" style="max-width: 200%; border-radius: 50%;">
+      </span>
     </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 2-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P2" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P2" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerTwo($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P2" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P2" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P2" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 3-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P3" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P3" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerThree($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P3" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P3" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P3" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 4-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P4" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P4" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerFour($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P4" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P4" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P4" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 5-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P5" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P5" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerFive($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P5" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P5" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P5" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 6-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P6" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P6" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerSix($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P6" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P6" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P6" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 7-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P7" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P7" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerSeven($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P7" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P7" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P7" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 8-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P8" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P8" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerEight($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P8" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P8" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P8" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
- <!-- forms -->
- <div class="flex flex-row gap-5">
+<!-- forms 9-->
+<div class="flex flex-row gap-5">
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Gk" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion">
-      <option disabled selected>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
-      <option>Choose Play Postion</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.jobdescription_P9" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Choose Play Postion"
+     (ngModelChange)='filterPlayer($event)'>
+      <option value="" disabled selected="selected">Choose Job Description</option>
+      <option *ngFor="let player of staffList" value="{{player.jobdescription}}">{{player.jobdescription}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Name(Jina)" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)">
-      <option disabled selected>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
-      <option>Name(Jina)</option>
+    <select [(ngModel)]="teamEventHelper.teamStaff.name_P9" class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Name(Jina)"
+    (ngModelChange)='mapPlayerPlayerNine($event)' >
+      <option value="" disabled selected="selected">Name(Jina)</option>
+      <option *ngFor="let player of playerNameList" value="{{player.name}}">{{player.name}}</option>
     </select>
   </div>
   <div class="flex-grow">
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Nafasi">
-      <option disabled selected>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-      <option>Nafasi</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.team_id_P9" type="text" placeholder="Nafasi" class="input input-bordered input-sm w-full bg-white" />
   </div>
   <div class="flex-grow">
-    <!-- <input type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" /> -->
-    <select class="select max-w-xs border select-sm input input-bordered input-sm w-full bg-white" title="Saini">
-      <option disabled selected>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-      <option>Saini</option>
-    </select>
+    <input readonly [(ngModel)]="teamEventHelper.teamStaff.signature_P9" type="text" placeholder="Saini" class="input input-bordered input-sm w-full bg-white" />
   </div>
-  <div class="ml-4">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rAXspe1a2jEJ0Ml5kaRrz0SUQsyJv2vHSFbzHXxeVw&s" alt="" style="max-width: 20%; border-radius: 50%;">
-  </div>
+  <span class="w-4 mr-4">
+    <img [src]="teamEventHelper.teamStaff.player_image_P9" alt="" style="max-width: 200%; border-radius: 50%;">
+  </span>
 </div>
   </div>
 </div>
