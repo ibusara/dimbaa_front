@@ -1,6 +1,8 @@
 export class TeamEventHelper {
   public teamPlayingXI: TeamPlayingXI = new TeamPlayingXI();
   public teamStaff: TeamStaff = new TeamStaff();
+  public teamSubmit: TeamSubmit = new TeamSubmit();
+  public playFormation: PlayFormation = new PlayFormation();
 }
 
 export class TeamPlayingXI {
@@ -150,4 +152,25 @@ export class TeamStaff {
   signature_P9: string = '';
   player_image_P9: string = '';
 
+}
+
+export class TeamSubmit {
+  id: string = '';
+  stadium_id: string = '';
+  name: string = '';
+  region: string = '';
+  created_at: string = '';
+  updated_at: string = '';
+  team: string = '';
+  team_photo: string = '';
+  team_logo: string = '';
+}
+
+export class PlayFormation {
+  id: string = '';
+  type: string = '';
+  image: string = '';
+  region: string = '';
+  created_at: string = '';
+  updated_at: string = '';
 }

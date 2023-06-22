@@ -13,6 +13,8 @@ export class LineUpFormComponent implements OnInit {
   playersList: any = [];
   staffList: any = [];
   details: any;
+  playFormation: any = [];
+  teams: any = [];
   teamEventHelper: TeamEventHelper = new TeamEventHelper();
   constructor(private teamManagerService: TeamManagerService) { }
 
@@ -20,6 +22,8 @@ export class LineUpFormComponent implements OnInit {
     this.getTeamPlayerList();
     this.getStaffList();
     this.getDetails();
+    this.getPlayFormation();
+    this.getTeams();
   }
   getTeamPlayerList() {
     this.teamManagerService.getTeamPlayerList().subscribe((res: any) => {
@@ -39,26 +43,41 @@ export class LineUpFormComponent implements OnInit {
   getDetails() {
     this.teamManagerService.getDetails().subscribe((res: any) => {
       if (res) {
-        this.details = res.data;
+        this.details = res?.data;
+      }
+    });
+  }
+  getPlayFormation() {
+    this.teamManagerService.getPlayFormation().subscribe((res: any) => {
+      if (res) {
+        this.playFormation = res?.Content;
+      }
+    });
+  }
+
+  getTeams() {
+    this.teamManagerService.getTeams().subscribe((res: any) => {
+      if (res) {
+        this.teams = res?.Content;
       }
     });
   }
   next() {
-    if (this.step < 5) {
+    if (this.step < 6) {
       this.step += 1;
     }
   }
 
   onSave() {
     switch (this.step) {
-      case 2:
+      case 6:
         this.savePlayingXI();
         break;
     }
   }
   checkedBox(val: boolean){
-    if(val){
-      this.disbleButton = true;
+    if (this.step == 6) {
+      this.disbleButton = val;
     }
   }
 

@@ -14,8 +14,8 @@
     <app-starting-players *ngSwitchCase="2" [teamEventHelper]="teamEventHelper" [playerList]="playersList"></app-starting-players>
     <app-substitutions *ngSwitchCase="3" [teamEventHelper]="teamEventHelper" [subPlayersList]="playersList"></app-substitutions>
     <app-team-leaders *ngSwitchCase="4"  [teamEventHelper]="teamEventHelper" [staffList]="staffList"></app-team-leaders>
-    <app-play-formation *ngSwitchCase="5"></app-play-formation>
-    <app-submit *ngSwitchCase="6" (checkBoxClick)="checkedBox($event)"></app-submit>
+    <app-play-formation *ngSwitchCase="5" [teamEventHelper]="teamEventHelper" [playFormation]="playFormation"></app-play-formation>
+    <app-submit *ngSwitchCase="6" (checkBoxClick)="checkedBox($event)" [teamEventHelper]="teamEventHelper" [teams]="teams"></app-submit>
   </div>
 </div>
 <div class="w-full flex justify-center mt-5">
@@ -26,8 +26,8 @@
     <button class="btn btn-primary text-white">
       Save Draft
     </button>
-    <button class="btn btn-primary text-white" (click)="next()">
-      Next
+    <button [disabled]="disbleButton" class="btn btn-primary text-white" (click)="next()">
+     {{step == 6 ? 'Submit' : 'Next'}}
     </button>
   </div>
 </div>

@@ -24,10 +24,24 @@ export class TeamManagerService {
       this.appUtils.GetAppApiHeaders()
     );
   }
-
+  
   getDetails(): Observable<any> {
     return this.http.get(
       this.url + 'teammanager/details/1',
+      this.appUtils.GetAppApiHeaders()
+    );
+  }
+
+  getPlayFormation(): Observable<any> {
+    return this.http.get(
+      this.url + 'teammanager/tactics',
+      this.appUtils.GetAppApiHeaders()
+    );
+  }
+
+  getTeams(): Observable<any> {
+    return this.http.get(
+      this.url + 'teammanager/teams',
       this.appUtils.GetAppApiHeaders()
     );
   }
